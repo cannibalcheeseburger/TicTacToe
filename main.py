@@ -1,4 +1,5 @@
 import os
+from random import randint
 board = ["-","-","-",
         "-","-","-", 
         "-","-","-"]
@@ -21,10 +22,12 @@ def game(still_going,player):
 
 def get_input(player):
     while True:
-        position = input("Enter value 1-9:") 
+        
         if player:
+            position = input("Enter value 1-9:") 
             symbol = "X"
         else :
+            position = randint(0,8)
             symbol = "O"  
         if int(position)>0 and int(position)<10 and board[int(position)-1] == "-" :
             break
